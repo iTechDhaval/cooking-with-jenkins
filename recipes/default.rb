@@ -21,7 +21,7 @@
 include_recipe "cooking-with-jenkins::install"
 
 # Prepare docker for use under jenkins
-include_recipe "cooking-with-jenkins::configure-docker"
+#include_recipe "cooking-with-jenkins::configure-docker"
 
 # Prepare jenkins for running jobs
 include_recipe "cooking-with-jenkins::configure-jenkins"

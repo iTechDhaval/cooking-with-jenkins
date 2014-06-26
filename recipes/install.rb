@@ -27,12 +27,23 @@ include_recipe "git::default"
 
 # We'll need a ruby to run cookbook tests, and some of the gems we'll
 # be installing need a few dev packages installed
-ruby_packages = %w{ ruby1.9.3 rake bundler libxml2-dev libxslt-dev }
+ruby_packages = %w{ ruby1.9.3 rake bundler libxml2-dev libxslt1-dev }
 ruby_packages.each { |p| package p }
 
 # We'll be running cookbook integration tests under Docker
-include_recipe "docker"
+#include_recipe "docker"
 
 # Finally, install jenkins
 include_recipe "jenkins::server"
 
+# install selenium
+include_recipe "selenium"
+
+# install PHP
+include_recipe "php"
+
+
+include_recipe "curl"
+
+extra_packages = %w{ php5-curl vim firefox }
+extra_packages.each { |p| package p }
