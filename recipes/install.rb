@@ -41,9 +41,9 @@ include_recipe "selenium"
 
 # install PHP
 include_recipe "php"
+include_recipe "php::module_mysql"
+include_recipe "php::module_gd"
+include_recipe "php::module_curl"
 
 
 include_recipe "curl"
-
-extra_packages = %w{ php5-curl vim firefox }
-extra_packages.each { |p| package p }
